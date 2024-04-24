@@ -1,4 +1,4 @@
-ckage list
+# package list
 sudo apt update
 
 # Install Docker
