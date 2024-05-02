@@ -1,7 +1,5 @@
 package com.thbs.usercreation.service;     
-package com.thbs.usercreation.service;
- 
- 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
