@@ -1,19 +1,20 @@
+package com.thbs.usercreation.service;     
 package com.thbs.usercreation.service;
-
-
+ 
+ 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-
+ 
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
-
+ 
 @Service
 public class EmailService {
     @Autowired
 	private JavaMailSender mailSender;
-
+ 
 	public void sendEmail(String to, String subject, String content) {
         MimeMessage message = mailSender.createMimeMessage();
         try {
@@ -28,14 +29,11 @@ public class EmailService {
 		}
 	}
 
-
 	public void sendpasswordurl(String email, String url) {
         // String resetLink = "http://localhost:1111/reset?token=" + token;
         String subject = "forgot password";
- 
         // Relative path to the logo in your project's static resources
         // String logoPath = "https://github.com/RiteshRaoV/project_final/blob/main/src/main/resources/static/Images/logo.png?raw=true";
- 
         // Email body with logo on top
         String body = "<!DOCTYPE html>"
                 + "<html lang=\"en\">"
@@ -60,8 +58,6 @@ public class EmailService {
                 + "</div>"
                 + "</body>"
                 + "</html>";
- 
         sendEmail(email, subject, body);
     }
 }
-
